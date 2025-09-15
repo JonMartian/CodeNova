@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeNova</title>
+    <link rel = "stylesheet" href="wharton_css.css">
+    <title>Zenith Ridge | HomePage</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+<div class="Const_Header">
+  <div class="Menu_Button" onclick="toggleMenu()">
+    <div class="Bar"></div>
+    <div class="Bar"></div>
+    <div class="Bar"></div>
+  </div>
+
+  <div class="Logo">
+    <img src="Zenith_Ridge_Logo.png" alt="Logo">
+  </div>
+
+  <div class="Search_Bar_Container">
+    <img src="Search.png" class="Search_Icon" alt="Search">
+    <input type="text" class="Search_Input" placeholder="Search Stocks...">
+  </div>
+</div>
+
+<!-- Move Menu OUTSIDE the header -->
+<nav class="Menu" id="Menu">
+  <a href="wharton_index.html">Home</a>
+  <a href="wharton_about.html">About</a>
+  <a href="">Stock Tracker</a>
+  <a href="wharton_download.html">Download</a>
+  <a href="wharton_contact.html">Contact</a>
+  <a href="">Exit</a>
+</nav>
+
+
+<div class = "Scroll_Body">
+    <div class = "Quote">
+        <h1>
+            At the ridge of progress, aiming for the zenith.
+        </h1>
+    </div>
+    <div class = "Pill_Button_Container">
+        <a class="Pill_Button" href="wharton_download.html">Get Started for Free</a>
+    </div>
+</div>
+
+<script>
+function toggleMenu(){
+    document.getElementById("Menu").classList.toggle("active")
+}
+</script>
 </body>
 </html>
