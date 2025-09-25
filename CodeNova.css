@@ -1,0 +1,356 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  /* background: linear-gradient(to bottom, #111,#111,#CCBAFF); */
+  background: #222222;
+  color: white;
+}
+h1{
+    font-family: "IBM Plex Sans Condensed",sans-serif;
+    font-weight: 300;
+}
+.Const_Header{
+    position: fixed;
+    top:0;
+    left:0;
+    height: 120px;
+    width: 100%;
+    color: black;
+    background-color: #111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.Scroll_Body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 300px;
+    height: 2000px;
+    background: transparent;
+}
+.Pill_Button_Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    z-index: 1000;
+}
+.Pill_Button{
+    border:none;
+    border-radius: 999px;
+    color: black;
+    background-color: rgb(248, 197, 255);
+    font-family: "IBM Plex Sans Condensed",sans-serif;
+    font-weight: 200;
+    padding: 20px;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.Quote{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.Quote h1{
+    color: #CCBAFF;
+    max-width: 800px;
+}
+.Menu_Button{
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    cursor:pointer;
+    z-index: 3000;
+}
+.Bar{
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin: 7px 0;
+    border-radius: 2px;
+}
+.Menu{
+    position: fixed;
+    top:0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #222;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 12000;
+}
+
+.Menu a{
+    color: white;
+    padding: 15px;
+    text-decoration:none;
+    font-size: 18px;
+    font-family: "IBM Plex Sans Condensed",sans-serif;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+}
+.Menu a:hover{
+    background: #333;
+}
+.Menu.active{
+    left: 0;
+}
+
+.Stage_Menu_Unit_1, .Stage_Menu_Unit_2,.Stage_Menu_Unit_3,.Stage_Menu_Unit_4,.Stage_Menu_Unit_5,.Stage_Menu_Unit_6{
+    position: fixed;
+    left: -400px;
+    width: 250px;
+    top:120px;
+    height: 380px;
+    background: #222;
+    display: flex;
+    flex-direction: column;
+    padding-top: 6px;
+    transition: left 0.3s ease;
+    z-index: 11000;
+    justify-content: center;
+    align-items: center;
+}
+
+.Stage_Menu_Unit_1 a, .Stage_Menu_Unit_2 a,.Stage_Menu_Unit_3 a,.Stage_Menu_Unit_4 a,.Stage_Menu_Unit_5 a,.Stage_Menu_Unit_6 a{
+    color: white;
+    text-decoration:none;
+    font-size: 22px;
+    font-family: "IBM Plex Sans Condensed",sans-serif;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    display: flex;
+    align-items:center;
+    padding: 25px;
+}
+
+.Stage_Menu_Unit_1 a:hover, .Stage_Menu_Unit_2 a:hover,.Stage_Menu_Unit_3 a:hover,.Stage_Menu_Unit_4 a:hover,.Stage_Menu_Unit_5 a:hover,.Stage_Menu_Unit_6 a:hover{
+    background: #333;
+}
+
+.Stage_Menu_Unit_1.active, .Stage_Menu_Unit_2.active,.Stage_Menu_Unit_3.active,.Stage_Menu_Unit_4.active,.Stage_Menu_Unit_5.active,.Stage_Menu_Unit_6.active{
+    left: 250px;
+}
+.header_link{
+    font-family: "IBM Plex Sans Condensed",sans-serif;
+    position: fixed;
+}
+.header_link a{
+    font-family: "IBM Plex Sans Condensed",sans-serif;
+    left: 240px;
+    top: 45px;
+    position:fixed;
+    text-decoration: none;
+    color: #CCBAFF;
+    font-size: 20px;
+    font-weight: 600;
+}
+.Logo{
+    height: 80px;
+    position: fixed;
+}
+.Logo img{
+    width: 70px;
+    height: auto;
+    left:100px;
+    position: fixed;
+    z-index: 2500;
+}
+.Contact_Text{
+    color: #CCBAFF;
+    margin-top: 150px;
+    font-size: 50px;
+    margin-left: 50px;
+    background: none;
+    box-shadow: none;
+}
+.Apple_Image{
+    z-index: 1000;
+    height: 200px;
+    color: #CCBAFF;
+    margin-bottom: 30px;
+}
+
+.Download_Button_Container{
+    z-index: 1000;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+}
+
+.About_Us_Text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Home_button_outline{
+    text-decoration: underline;
+}
+.Homepage_message{
+    font-size: 90px;
+}
+.Console_Box {
+    width: 800px;
+    margin: 50px 0 50px 50px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #2a2a40;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+.Console_Box py-terminal{
+    background: black;
+    color:lime;
+    font-family: monospace;
+    padding: 10px;
+    border-radius: 5px;
+}
+.python-input {
+  width: 100%;
+  font-family: monospace;
+  background: black;
+  color: rgb(156, 220, 254);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  resize: vertical;
+  margin-bottom: 10px;
+  height: 200px;
+}
+
+#run-btn {
+  padding: 8px 15px;
+  background: #444;
+  color: rgb(156, 220, 254);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: monospace;
+}
+
+#run-btn:hover {
+  background: #666;
+}
+
+.output {
+  margin-top: 15px;
+  background: black;
+  color: rgb(156, 220, 254);
+  padding: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  min-height: 100px;
+}
+
+.content_text,.content_header,.content_header_minor{
+    padding: 35px;
+}
+.content_text{
+    font-size: 25px;
+    font-family: "IBM Plex Sans Condensed",sans-serif;
+}
+.content_header{
+    font-size: 40px;
+    font-weight: 700;
+}
+.green_text{
+    color: #078200;
+}
+.content_header_minor{
+    font-size: 30px;
+    font-family: "IBM Plex Sans Condensed",sans-serif;
+    font-weight: 500;
+}
+.stack_images {
+    width: 100%;      
+    max-width: 700px;  
+    margin: 20px auto; 
+    padding: 10px;
+    text-align: center;
+}
+.stack_images img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+#cb1{
+    height: 400px;
+}
+#cb2{
+    height: 600px;
+}
+.Test_Case{
+    width: 800px;
+    background: #333;
+}
+.test_case_text{
+    padding: 5px 0 0 15px;
+    font-size: 24px;
+    font-family: "IBM Plex Sans Condensed",sans-serif;
+}
+.mini_practice{
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #078200;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 20px;
+}
+.mini_practice_box{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.mini_practice_box a{
+    text-decoration: none;
+    font-family: "IBM Plex Sans Condensed",sans-serif;
+    font-size: 25px;
+    color: white;
+}
+.mini_practice_title{
+    padding: 0px;
+    font-family: "IBM Plex Sans Condensed",sans-serif;
+    font-weight: 500;
+}
+#mini_practice{
+    padding: 0px;
+}
+#lesson_link{
+    font-size: 40px;
+}
+.stdin_label{
+    font-family: "IBM Plex Sans Condensed",sans-serif;
+    font-size: 14px;
+}
+.stdin{
+    width: 98%;
+    height: 70px;
+    font-family: monospace;
+    border-radius: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    background: #222;
+    color: #CCBAFF;
+}
+#mini2{
+    display: flex;
+    align-items: center;
+}
+.algebra_letter{
+    font-style: italic;
+    font-weight: 600;
+}

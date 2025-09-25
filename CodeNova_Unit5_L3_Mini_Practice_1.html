@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href="CodeNova.css">
+    <title>CodeNova | Pagkakapareho</title>
+</head>
+<body>
+<div class="Const_Header">
+  <div class="Menu_Button" onclick="toggleMenu()">
+    <div class="Bar"></div>
+    <div class="Bar"></div>
+    <div class="Bar"></div>
+  </div>
+
+  <div class="Logo">
+    <img src="CodeNova.png" alt="Logo">
+  </div>
+
+  <div class="header_link">
+    <a href="CodeNova_About_Us.html">Tungkol(About)</a>
+  </div>
+
+</div>
+
+<!-- Move Menu OUTSIDE the header -->
+<nav class="Menu" id="Menu">
+  <a href="index.html">Home</a>
+  <a onclick="stageMenu_unit1()">Unit 1: Inputs, outputs & variables</a>
+  <a onclick="stageMenu_unit2()">Unit 2: If conditions, for loops, while loops</a>
+  <a onclick="stageMenu_unit3()">Unit 3: Strings</a>
+  <a onclick="stageMenu_unit4()">Unit 4: Functions & recursion</a>
+  <a onclick="stageMenu_unit5()">Unit 5: 1d & 2d arrays, Sets, Hashmaps</a>
+  <a onclick="stageMenu_unit6()">Unit 6: Linked list, stacks, queues & deques</a>
+</nav>
+
+<nav class = "Stage_Menu_Unit_1" id="Stage_Menu_Unit_1">
+    <a href="CodeNova_Unit1_L1.html">Inputs</a>
+    <a href="CodeNova_Unit1_L2.html">Outputs</a>
+    <a href="CodeNova_Unit1_L3.html">Math Operators</a>
+    <a href="CodeNova_Unit1_L4.html">Data Types</a>
+</nav>
+
+<nav class = "Stage_Menu_Unit_2" id="Stage_Menu_Unit_2">
+    <a href="CodeNova_Unit2_L1.html">If Conditions</a>
+    <a href="CodeNova_Unit2_L2.html">For Loops</a>
+    <a href="CodeNova_Unit2_L3.html">While Loops</a>
+</nav>
+
+<nav class = "Stage_Menu_Unit_3" id="Stage_Menu_Unit_3">
+    <a href="CodeNova_Unit3_L1.html">Strings</a>
+</nav>
+
+<nav class = "Stage_Menu_Unit_4" id="Stage_Menu_Unit_4">
+    <a href="CodeNova_Unit4_L1.html">Functions</a>
+    <a href="CodeNova_Unit4_L2.html">Recursion</a>
+</nav>
+
+<nav class = "Stage_Menu_Unit_5" id="Stage_Menu_Unit_5">
+    <a href="CodeNova_Unit5_L1.html">2D Arrays</a>
+    <a href="CodeNova_Unit5_L2.html">Sets</a>
+    <a href="CodeNova_Unit5_L3.html">Hashmaps</a>
+</nav>
+
+<nav class = "Stage_Menu_Unit_6" id="Stage_Menu_Unit_6">
+    <a href="CodeNova_Unit6_L1.html">Stacks</a>
+    <a href="CodeNova_Unit6_L2.html">Queues & Deques</a>
+</nav>
+
+<div class = "Scroll_Body">
+    <div class = "Quote">
+        <h1 class="Homepage_message">
+            Mga iskor sa pagsusulit
+        </h1>
+    </div>
+    <div class = "mini_practice">
+        <div class="mini_practice_box">
+            <a href="CodeNova_Unit5_L3.html" id="lesson_link">Lesson</a>
+        </div>
+        <h1 class="mini_practice_title">Maliit na Pagsasanay</h1>
+        <div class="mini_practice_box">
+            <a href="CodeNova_Unit5_L3_Mini_Practice_2.html">2.Edad</a>
+        </div>
+    </div>
+    <h1 class = "content_header"><span class="green_text">Maliit na Pagsasanay </span>1</h1>
+    <p class="content_text">Isulat ang isang programa na gumagamit ng sets at iba pang kaugnay na functions upang ipagawa sa user ang pag-input ng 2 sets na may iba’t ibang kulay, at ilabas kung aling mga kulay ang parehong nasa dalawang sets.
+(Kung hindi ka sigurado kung ano ang gagawin, subukan mong mag-research.)
+
+Alamin kung anong mga functions ang makakatulong sa’yo sa gawaing ito.
+
+I-output ang mga magkakaparehong kulay ayon sa alpabetikong pagkakasunod batay sa kanilang unang letra. Kung wala namang magkakatulad na kulay, i-output ang “None”.
+</p>
+    <div class="Test_Case" data-console-id="mini1">
+        <p class="test_case_text"> INPUT: <span class="green_text"><br>
+            Red Blue Purple Yellow <br>
+            Green Red Blue Blue
+        </span></p>
+        <p class="test_case_text"> EXPECTED OUTPUT: <span class="green_text">Blue Red</span></p>
+        <p class="test_case_text"> INPUT: <span class="green_text"><br>
+            Yellow Purple Blue Yellow<br>
+            Red Green Purple<br>
+        </span></p>
+        <p class="test_case_text"> EXPECTED OUTPUT: <span class="green_text">Purple</span></p>
+        <p class="test_case_text"> INPUT: <span class="green_text"><br>
+            Red Red Red Green Blue<br>
+            Yellow Yellow Purple
+        </span></p>
+        <p class="test_case_text"> EXPECTED OUTPUT: <span class="green_text">None</span></p>
+
+        <p class="test_case_text"> INPUT: <span class="green_text"><br>
+            Red Yellow Green Blue Red Yellow<br>
+            Purple Purple Purple Purple
+        </span></p>
+        <p class="test_case_text"> EXPECTED OUTPUT: <span class="green_text">None</span></p>
+        
+        
+<pre class="test-results" data-cases='[
+  [["Red Blue Purple Yellow", "Green Red Blue Blue"], "Blue Red"],
+  [["Yellow Purple Blue Yellow", "Red Green Purple"], "Purple"],
+  [["Red Red Red Green Blue", "Yellow Yellow Purple"], "None"],
+  [["Red Yellow Green Blue Red Yellow", "Purple Purple Purple Purple"], "None"]
+]'></pre>
+    </div>
+<div class="Console_Box" data-console-id="mini1">
+  <h2>Console</h2>
+
+  <!-- code editor -->
+  <textarea class="python-input" id="cb1" placeholder="# Write your code here (top-level).">
+#Insert Code Here
+</textarea>
+
+  <!-- stdin textarea (one line per input() call) -->
+  <label class="stdin-label">
+  Manu-manong input, hindi kailangang suriin lahat ng test cases
+  </label>
+  <textarea class="stdin" placeholder="Input here"></textarea>
+  <br>
+  <button onclick="runPython(this)">Run</button>
+  <pre class="output"></pre>
+</div>
+
+<!-- end of scroll body -->
+</div>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+<script>
+/* Replace the old runPython with this one.
+   Behavior:
+   - Manual run: uses the Console_Box .stdin textarea as stdin (one line per input()) and shows printed output.
+   - Tests: for each test case, injects the test input (split by newline) and executes the student's code in isolation,
+            captures stdout, and compares stdout (trimmed) to the expected string (trimmed).
+*/
+let pyodideReady = loadPyodide();
+
+async function runPython(button) {
+  console.log("[runPython] start");
+  const consoleBox = button.closest(".Console_Box");
+  if (!consoleBox) { console.error("no .Console_Box found"); return; }
+
+  const consoleId = consoleBox.dataset.consoleId || "page";
+  const code = consoleBox.querySelector(".python-input").value;
+  const outputEl = consoleBox.querySelector(".output");
+  const testCasesEl = document.querySelector(`.Test_Case[data-console-id="${consoleId}"] .test-results`);
+  const stdinRaw = consoleBox.querySelector(".stdin")?.value || "";
+  const stdinLinesForRun = stdinRaw.length ? stdinRaw.split(/\r?\n/) : [];
+
+  const pyodide = await pyodideReady;
+  console.log("[runPython] pyodide ready, consoleId=", consoleId);
+
+  // Save history
+  try {
+    const key = "consoleHistory_" + consoleId;
+    const history = JSON.parse(localStorage.getItem(key) || "[]");
+    history.push(code);
+    localStorage.setItem(key, JSON.stringify(history));
+  } catch (e) { console.warn("history save failed", e); }
+
+  // Helper: execute student's code in an isolated exec and capture stdout & exception.
+  // `stdinLines` should be an array of lines (strings) representing successive input() calls.
+  async function runUserCodeWithStdin(stdinLines) {
+    // Create a Python snippet that:
+    // - sets builtins.input to pop from py_stdin list
+    // - redirects sys.stdout to a StringIO buffer
+    // - execs the student's code in an empty global dict
+    // - stores _run_out and _run_err in the global namespace so JS can read them
+    const pySnippet = `
+import sys, io, builtins, traceback
+py_stdin = ${JSON.stringify(stdinLines)}
+def input(prompt_text=""):
+    try:
+        return py_stdin.pop(0)
+    except Exception:
+        # mimic Python's EOFError if no more input
+        raise EOFError("No more input")
+builtins.input = input
+
+buf = io.StringIO()
+_old_stdout = sys.stdout
+sys.stdout = buf
+_run_err = ""
+try:
+    # execute user code in a fresh namespace to avoid cross-test pollution
+    exec(${JSON.stringify(code)}, {})
+except Exception:
+    _run_err = traceback.format_exc()
+finally:
+    sys.stdout = _old_stdout
+_run_out = buf.getvalue()
+`;
+    try {
+      await pyodide.runPythonAsync(pySnippet);
+      // retrieve results
+      const out = pyodide.globals.get("_run_out");
+      const err = pyodide.globals.get("_run_err");
+      // convert to JS strings
+      const outStr = out === undefined || out === null ? "" : String(out);
+      const errStr = err === undefined || err === null ? "" : String(err);
+      // cleanup these names so next run is fresh
+      try { await pyodide.runPythonAsync(`_run_out = ""; _run_err = ""`); } catch (_) {}
+      return { out: outStr, err: errStr };
+    } catch (e) {
+      // fatal error running runner snippet
+      console.error("fatal error running user snippet:", e);
+      return { out: "", err: String(e) };
+    }
+  }
+
+  // 1 Manual run using the stdin box ----
+  try {
+    const manualRes = await runUserCodeWithStdin(stdinLinesForRun);
+    if (manualRes.err && manualRes.err.trim().length > 0) {
+      outputEl.innerText = "❌ Runtime error:\n" + manualRes.err;
+    } else {
+      outputEl.innerText = (manualRes.out.trim() || "(no printed output)");
+    }
+  } catch (e) {
+    outputEl.innerText = "❌ Error running code: " + String(e);
+  }
+
+  // 2 Automated tests (run per-test in isolation, compare printed stdout) ----
+  if (testCasesEl && testCasesEl.dataset.cases) {
+    let testCases;
+    try {
+      testCases = JSON.parse(testCasesEl.dataset.cases);
+    } catch (e) {
+      testCasesEl.innerText = "❌ test-cases JSON invalid: " + e;
+      console.error("test cases JSON invalid", e);
+      return;
+    }
+
+    let results = "";
+    for (const tc of testCases) {
+      // tc may be [inputString, expectedOutput]
+      const inp = tc[0];
+      const expected = tc[1] !== undefined ? String(tc[1]) : "";
+
+      // create stdinLines by splitting the test input on newlines
+      // if the test input is an array (rare), handle that too
+      let stdinLines;
+      if (Array.isArray(inp)) {
+        stdinLines = inp.map(x => String(x));
+      } else {
+        // treat single string; allow \n inside to represent multiple input() calls
+        stdinLines = String(inp).split(/\r?\n/);
+      }
+
+      // run student's code with the test stdin
+      let res;
+      try {
+        res = await runUserCodeWithStdin(stdinLines);
+      } catch (e) {
+        res = { out: "", err: String(e) };
+      }
+
+      // prefer showing runtime errors 
+      if (res.err && res.err.trim().length > 0) {
+        results += `⚠️ Error on input ${JSON.stringify(inp)}:\n${res.err}\n`;
+        continue;
+      }
+
+      // compare printed stdout, considering whitespace
+      const got = res.out.replace(/\r\n/g, "\n").trim();
+      const want = expected.replace(/\r\n/g, "\n").trim();
+
+      if (got === want) {
+        results += ` ✅ Passed: input ${JSON.stringify(inp)} → ${got}\n`;
+      } else {
+        results += ` ❌ Failed: input ${JSON.stringify(inp)} → got "${got}", expected "${want}"\n`;
+      }
+    } // for each test
+
+    testCasesEl.innerText = results;
+  } else {
+    console.log("[runPython] no tests for consoleId:", consoleId);
+  }
+
+  console.log("[runPython] done");
+}
+</script>
+
+
+<script>
+/* Auto-clear output & test-results when the user edits a console's textarea.
+   Works per-console: it looks for a Test_Case with the same data-console-id.
+*/
+window.addEventListener("load", () => {
+  document.querySelectorAll(".Console_Box").forEach(consoleBox => {
+    const textarea = consoleBox.querySelector(".python-input");
+    if (!textarea) return;
+
+    // clear the output and test results tied to this console
+    const clearResults = () => {
+      // clear console output
+      const out = consoleBox.querySelector(".output");
+      if (out) out.innerText = "";
+
+      // find test results associated with this console
+      const consoleId = consoleBox.dataset.consoleId;
+      let testResultsEl = null;
+
+      if (consoleId) {
+        // Test_Case with the same data-console-id
+        const tc = document.querySelector(`.Test_Case[data-console-id="${consoleId}"]`);
+        if (tc) testResultsEl = tc.querySelector(".test-results");
+      }
+
+      // if test-results is the same inside the same Console_Box wrapper
+      if (!testResultsEl) {
+        testResultsEl = consoleBox.querySelector(".test-results");
+      }
+
+      if (testResultsEl) testResultsEl.innerText = "";
+    };
+
+    // clear on input 
+    textarea.addEventListener("input", clearResults);
+    textarea.addEventListener("keydown", (e) => {
+      // clear immediately on ctrl/cmd+Enter?
+      if (e.key === "z" && (e.ctrlKey || e.metaKey)) {
+        // don't clear for undo specifically 
+        // this handler kept for custom behavior in the future
+      }
+    });
+  });
+});
+</script>
+
+<script>
+function toggleMenu(){
+    const menu = document.getElementById("Menu");
+    menu.classList.toggle("active");
+
+    if (!menu.classList.contains("active")) {
+        document.getElementById("Stage_Menu_Unit_1").classList.remove("active");
+        document.getElementById("Stage_Menu_Unit_2").classList.remove("active");
+        document.getElementById("Stage_Menu_Unit_3").classList.remove("active");
+        document.getElementById("Stage_Menu_Unit_4").classList.remove("active");
+        document.getElementById("Stage_Menu_Unit_5").classList.remove("active");
+        document.getElementById("Stage_Menu_Unit_6").classList.remove("active");
+    }
+    
+}
+function stageMenu_unit1(){
+    document.getElementById("Stage_Menu_Unit_1").classList.toggle("active")
+    document.getElementById("Stage_Menu_Unit_2").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_3").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_4").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_5").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_6").classList.remove("active")
+
+}
+function stageMenu_unit2(){
+    document.getElementById("Stage_Menu_Unit_1").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_2").classList.toggle("active")
+    document.getElementById("Stage_Menu_Unit_3").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_4").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_5").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_6").classList.remove("active")
+}
+function stageMenu_unit3(){
+    document.getElementById("Stage_Menu_Unit_1").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_2").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_3").classList.toggle("active")
+    document.getElementById("Stage_Menu_Unit_4").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_5").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_6").classList.remove("active")
+}
+function stageMenu_unit4(){
+    document.getElementById("Stage_Menu_Unit_1").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_2").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_3").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_4").classList.toggle("active")
+    document.getElementById("Stage_Menu_Unit_5").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_6").classList.remove("active")
+}
+function stageMenu_unit5(){
+    document.getElementById("Stage_Menu_Unit_1").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_2").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_3").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_4").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_5").classList.toggle("active")
+    document.getElementById("Stage_Menu_Unit_6").classList.remove("active")
+}
+function stageMenu_unit6(){
+    document.getElementById("Stage_Menu_Unit_1").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_2").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_3").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_4").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_5").classList.remove("active")
+    document.getElementById("Stage_Menu_Unit_6").classList.toggle("active")
+}
+document.addEventListener("click", function(event) {
+    const menu = document.getElementById("Menu");
+    const stageMenus = [
+        document.getElementById("Stage_Menu_Unit_1"),
+        document.getElementById("Stage_Menu_Unit_2"),
+        document.getElementById("Stage_Menu_Unit_3"),
+        document.getElementById("Stage_Menu_Unit_4"),
+        document.getElementById("Stage_Menu_Unit_5"),
+        document.getElementById("Stage_Menu_Unit_6")
+    ];
+    const menuButton = document.querySelector(".Menu_Button");
+    if (!menu.contains(event.target) && 
+        !menuButton.contains(event.target) &&
+        !stageMenus.some(sm => sm.contains(event.target))) {
+
+        menu.classList.remove("active");
+        stageMenus.forEach(sm => sm.classList.remove("active"));
+    }
+});
+</script>
+<script>
+document.querySelectorAll(".python-input").forEach(textarea => {
+  textarea.addEventListener("keydown", function(event) {
+    if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
+      event.preventDefault();
+      const button = this.closest(".Console_Box").querySelector("button");
+      runPython(button);
+    }
+    if (event.key === "Escape") {
+      this.closest(".Console_Box").querySelector(".output").innerText = "";
+    }
+    if (event.key === "Tab") {
+      event.preventDefault();
+      const start = this.selectionStart;
+      const end = this.selectionEnd;
+      const spaces = "    ";
+      this.value = this.value.substring(0, start) + spaces + this.value.substring(end);
+      this.selectionStart = this.selectionEnd = start + spaces.length;
+    }
+  });
+});
+
+</script>
+</body>
+</html>

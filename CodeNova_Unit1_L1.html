@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href="CodeNova.css">
-    <title>CodeNova | HomePage</title>
+    <title>CodeNova | Inputs</title>
 </head>
 <body>
 <div class="Const_Header">
@@ -20,6 +20,7 @@
   <div class="Logo">
     <img src="CodeNova.png" alt="Logo">
   </div>
+
   <div class="header_link">
     <a href="CodeNova_About_Us.html">Tungkol(About)</a>
   </div>
@@ -29,17 +30,17 @@
 <!-- Move Menu OUTSIDE the header -->
 <nav class="Menu" id="Menu">
   <a href="index.html">Home</a>
-  <a onclick="stageMenu_unit1()">Unit 1: Inputs, outputs and variables</a>
+  <a onclick="stageMenu_unit1()">Unit 1: Inputs, outputs & variables</a>
   <a onclick="stageMenu_unit2()">Unit 2: If conditions, for loops, while loops</a>
-  <a onclick="stageMenu_unit3()">Unit 3: Strings, 1d arrays</a>
-  <a onclick="stageMenu_unit4()">Unit 4: Functions and recursion</a>
-  <a onclick="stageMenu_unit5()">Unit 5: 2d arrays, Sets, Hashmaps</a>
-  <a onclick="stageMenu_unit6()">Unit 6: Linked list, stacks, queues and deques</a>
+  <a onclick="stageMenu_unit3()">Unit 3: Strings</a>
+  <a onclick="stageMenu_unit4()">Unit 4: Functions & recursion</a>
+  <a onclick="stageMenu_unit5()">Unit 5: 1d & 2d arrays, Sets, Hashmaps</a>
+  <a onclick="stageMenu_unit6()">Unit 6: Linked list, stacks, queues & deques</a>
 </nav>
 
 <nav class = "Stage_Menu_Unit_1" id="Stage_Menu_Unit_1">
-    <a href="CodeNova_Unit1_L1.html">Introduction to Inputs</a>
-    <a href="CodeNova_Unit1_L2.html">Introduction to Outputs</a>
+    <a href="CodeNova_Unit1_L1.html">Inputs</a>
+    <a href="CodeNova_Unit1_L2.html">Outputs</a>
     <a href="CodeNova_Unit1_L3.html">Math Operators</a>
     <a href="CodeNova_Unit1_L4.html">Data Types</a>
 </nav>
@@ -73,17 +74,129 @@
 <div class = "Scroll_Body">
     <div class = "Quote">
         <h1 class="Homepage_message">
-            Teaching Python for beginners
+            Inputs
         </h1>
     </div>
-    <div class = "Start Video">
-        
-    </div>
-    
+        <h1 class = "content_header">Ano ang <span class="green_text">Input</span>?</h1>
+        <p class="content_text"> 
+        Tumatanggap ang mga programa ng datos mula sa mga gumagamit sa pamamagitan ng mga input method, na nagbibigay-daan 
+        para magkaroon ng interaktibong komunikasyon sa pagitan ng gumagamit at ng programa. Sa ganitong paraan, nakokolekta 
+        ng programa ang iba’t ibang uri ng datos na ibinibigay ng user, tulad ng:<br>
 
+➡Personal na impormasyon: mga pangalan, edad, email address, at iba pa.<br>
 
+➡Mga numero at halaga: para magamit sa kalkulasyon o pagproseso.<br>
+
+➡Mga password o secure na datos: karaniwang nakatago para sa pribadong seguridad.<br>
+
+➡Mga sagot sa tanong: para sa quiz, survey, o mga form.<br>
+
+➡Mga pagpipilian o selections: tulad ng menu options o multiple-choice na sagot.<br>
+
+➡Feedback o komento: para makapagbigay ng opinyon o suhestiyon ang user.<br>
+
+➡Mga kagustuhan o settings: para ma-customize ng user ang kanilang karanasan (halimbawa: tema, wika).<br>
+
+➡Mga utos o instruksyon: para makontrol kung paano kikilos ang programa.<br>
+</p>
+
+<h1 class="content_header">Mga Konsol (<span class="green_text">Consoles</span>)</h1>
+<p class="content_text">
+    Para patakbuhin ang ating code, gagamit tayo ng konsol. Ang konsol ay may 3 pangunahing bahagi:<br>
+
+Itaas na seksyon – dito mo isinusulat ang iyong code.<br>
+
+Gitnang bahagi – dito inilalagay ang input (hindi ito kailangan para sa mini practices).<br>
+
+Ibabang seksyon – dito makikita ang output.<br>
+<br>
+Tandaan na para sa mga lesson pages, ang mga konsol ay walang input. Pero sa mga mini practices, naroon ang seksyong ito.
+</p>
+<h1 class = "content_header">Gamit <span class="green_text">input()</span></h1>
+<div class="Console_Box">
+<h2>Console</h2>
+<textarea class="python-input" id="cb1">
+# Ito ay isang komento, wala akong ginagawa.
+# Gamitin ang “#” para maglagay ng mga komento sa Python
+
+#Kapag sinulat mo ang name = input(), ang makukuha mong sagot ay laging isang string o salita bilang default.
+
+#Kung gusto mong mag-input ng ibang uri ng data, ganito ang gagawin mo:
+
+INTEGER = int(input())# Nag-iinput ng integer (buong numero) at iniimbak ito sa variable na Number
+FLOAT = float(input())
+STRING = str(input())
+BOOLEAN = bool(input())
+</textarea>
+<button onclick="runPython(this)">Run</button>
+<pre class="output"></pre>
 </div>
 
+<h1 class = "content_header">Test Cases</h1>
+<h1>1.Valid Input (Tamang Input)</h1>
+<p class="content_text">Tamang format: Tugma ang input sa inaasahang uri at limitasyon (halimbawa: numero kapag numero ang hinihingi).
+
+Nasa saklaw: Mga numerong nasa loob ng pinapayagang saklaw.
+
+Inaasahang strings: Kapag salita ang input, dapat valid o tamang salita (halimbawa: "oo", "hindi").</p>
+<h1>2.Invalid Input (Maling Input)</h1>
+<p class="content_text">Maling uri ng data: Halimbawa, pagpasok ng mga letra kapag numero ang hinihingi, o kabaliktaran.
+
+Labas sa saklaw: Mga numerong masyadong mataas o mababa sa pinapayagang limitasyon.
+
+Walang laman: Pinindot lang ang Enter nang walang tinatype.
+
+Espesyal na karakter: Mga simbolo, bantas, o escape characters.
+
+Puro whitespace: Input na puro espasyo o tab lamang.</p>
+<h1>3.Boundary Input (Input sa Hangganan)</h1>
+<p class="content_text">Pinakamababang pinapayagang halaga: Ang pinakamaliit na valid na input.
+
+Pinakamataas na pinapayagang halaga: Ang pinakamalaking valid na input.
+
+Isang mas mababa o mas mataas kaysa sa hangganan: Input na lampas lang nang kaunti sa pinapayagan.</p>
+<h1>4. Unexpected Input (Hindi Inaasahang Input)</h1>
+<p class="content_text">Mahahabang string: Mga sobrang habang input na salita.
+
+Unicode characters: Emojis, mga letra na may tuldik, o hindi ASCII na input.
+
+Maramihang salita: Input na may espasyo kapag isang salita lang ang inaasahan.
+
+Injection attempts: Mga atakeng pang-seguridad gaya ng SQL injection o script tags.</p>
+<!-- end of scroll body -->
+</div>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+<script>
+let pyodideReady = loadPyodide();
+let consoleHistory = JSON.parse(localStorage.getItem("consoleHistory")) || [];
+
+async function runPython(button) {
+    const consoleBox = button.closest(".Console_Box");
+    const code = consoleBox.querySelector(".python-input").value;
+    const outputel = consoleBox.querySelector(".output");
+    const pyodide = await pyodideReady;
+
+    let output = "";
+    const oldPrint = pyodide.globals.get("print");
+    pyodide.globals.set("print", (...args) => {
+      output += args.join(" ") + "\n";
+    });
+
+    try {
+      await pyodide.runPythonAsync(code);
+    } catch (err) {
+      output += err + "\n";
+    }
+
+    pyodide.globals.set("print", oldPrint);
+    outputel.innerText = output;
+
+    let saved = JSON.parse(localStorage.getItem("consoleHistory")) || [];
+    console.log(saved);
+
+}
+</script>
 <script>
 function toggleMenu(){
     const menu = document.getElementById("Menu");
@@ -169,27 +282,27 @@ document.addEventListener("click", function(event) {
 });
 </script>
 <script>
-document.getElementById("python-input").addEventListener("keydown", function(event) {
+document.querySelectorAll(".python-input").forEach(textarea => {
+  textarea.addEventListener("keydown", function(event) {
     if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
-        event.preventDefault(); 
-        runPython();
+      event.preventDefault();
+      const button = this.closest(".Console_Box").querySelector("button");
+      runPython(button);
     }
-});
-document.addEventListener("keydown", function(event) {
     if (event.key === "Escape") {
-        document.getElementById("output").innerText = "";
+      this.closest(".Console_Box").querySelector(".output").innerText = "";
     }
-});
-document.getElementById("python-input").addEventListener("keydown", function(event) {
     if (event.key === "Tab") {
-        event.preventDefault();
-        const start = this.selectionStart;
-        const end = this.selectionEnd;
-        const spaces = "    ";
-        this.value = this.value.substring(0, start) + spaces + this.value.substring(end);
-        this.selectionStart = this.selectionEnd = start + spaces.length;
+      event.preventDefault();
+      const start = this.selectionStart;
+      const end = this.selectionEnd;
+      const spaces = "    ";
+      this.value = this.value.substring(0, start) + spaces + this.value.substring(end);
+      this.selectionStart = this.selectionEnd = start + spaces.length;
     }
+  });
 });
+
 </script>
 </body>
 </html>

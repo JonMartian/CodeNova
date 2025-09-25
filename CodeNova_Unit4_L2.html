@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href="CodeNova.css">
-    <title>CodeNova | HomePage</title>
+    <title>CodeNova | Recursion</title>
 </head>
 <body>
 <div class="Const_Header">
@@ -20,6 +20,7 @@
   <div class="Logo">
     <img src="CodeNova.png" alt="Logo">
   </div>
+
   <div class="header_link">
     <a href="CodeNova_About_Us.html">Tungkol(About)</a>
   </div>
@@ -29,17 +30,17 @@
 <!-- Move Menu OUTSIDE the header -->
 <nav class="Menu" id="Menu">
   <a href="index.html">Home</a>
-  <a onclick="stageMenu_unit1()">Unit 1: Inputs, outputs and variables</a>
+  <a onclick="stageMenu_unit1()">Unit 1: Inputs, outputs & variables</a>
   <a onclick="stageMenu_unit2()">Unit 2: If conditions, for loops, while loops</a>
-  <a onclick="stageMenu_unit3()">Unit 3: Strings, 1d arrays</a>
-  <a onclick="stageMenu_unit4()">Unit 4: Functions and recursion</a>
-  <a onclick="stageMenu_unit5()">Unit 5: 2d arrays, Sets, Hashmaps</a>
-  <a onclick="stageMenu_unit6()">Unit 6: Linked list, stacks, queues and deques</a>
+  <a onclick="stageMenu_unit3()">Unit 3: Strings</a>
+  <a onclick="stageMenu_unit4()">Unit 4: Functions & recursion</a>
+  <a onclick="stageMenu_unit5()">Unit 5: 1d & 2d arrays, Sets, Hashmaps</a>
+  <a onclick="stageMenu_unit6()">Unit 6: Linked list, stacks, queues & deques</a>
 </nav>
 
 <nav class = "Stage_Menu_Unit_1" id="Stage_Menu_Unit_1">
-    <a href="CodeNova_Unit1_L1.html">Introduction to Inputs</a>
-    <a href="CodeNova_Unit1_L2.html">Introduction to Outputs</a>
+    <a href="CodeNova_Unit1_L1.html">Inputs</a>
+    <a href="CodeNova_Unit1_L2.html">Outputs</a>
     <a href="CodeNova_Unit1_L3.html">Math Operators</a>
     <a href="CodeNova_Unit1_L4.html">Data Types</a>
 </nav>
@@ -73,17 +74,84 @@
 <div class = "Scroll_Body">
     <div class = "Quote">
         <h1 class="Homepage_message">
-            Teaching Python for beginners
+        Recursion
         </h1>
     </div>
-    <div class = "Start Video">
-        
+    <div class = "mini_practice">
+        <h1 class="content_header">Maliit na Pagsasanay</h1>
+        <div class="mini_practice_box">
+            <a href="CodeNova_Unit4_L2_Mini_Practice_1.html">1.Factorial</a>
+        </div>
+        <div class="mini_practice_box">
+            <a href="CodeNova_Unit4_L2_Mini_Practice_2.html">2.Fibonacci</a>
+        </div>
     </div>
-    
 
+<h1 class = "content_header">Ano ang <span class="green_text">recursion</span>?</h1>
+<p class="content_text"> 
+Ang <span class="green_text">recursion</span> ay <span class="green_text">recursion</span>. Ito ay kapag ang isang function ay tinatawag ang sarili nito upang lutasin ang isang problema. Inuulit nito ang mas maliliit na bersyon ng problema hanggang maabot ang isang punto ng paghinto, na tinatawag na base case, pagkatapos ay ibinabalik ang solusyon.<br>
+<br>
+Ang recursion ay nakakalito para sa mga baguhan dahil patuloy na tinatawag ng function ang sarili nito. Mahirap i-visualize ang bawat hakbang, tandaan ang base case, at makita kung paano nagsasama-sama ang lahat ng tawag upang mabuo ang huling resulta.<br>
+<br>
+Maaari kang gumamit ng recursion trees upang i-visualize ang recursion.<br>
+<br>
+Ang recursion tree ay isang visual na kagamitan na ginagamit upang maunawaan at masuri kung paano gumagana ang isang recursive function at kung ilang beses nitong tinatawag ang sarili nito. Kapag ang isang recursive function ay tumatawag sa sarili nito nang maraming beses, maaari mong ipakita ang mga tawag na ito bilang mga node sa isang puno. Ang root ng tree ay ang orihinal na tawag ng function, at ang mga anak nito ay kumakatawan sa mga recursive calls na ginagawa nito. Bawat level ng tree ay nagpapakita ng susunod na layer ng recursive calls. Nakakatulong ito upang makita ang istruktura ng recursion, tantyahin ang kabuuang bilang ng tawag, at masuri ang time complexity ng recursive algorithm.
 
+</p>
+
+<h1 class = "content_header">Gamit <span class="green_text">recursion</span></h1>
+<div class="Console_Box">
+<h2>Console</h2>
+<textarea class="python-input" id="cb1">
+def add_numbers(n):
+    # Base case: kung ang n ay 1, ibalik na lang ang 1
+    if n == 1:
+        return 1
+    else:
+        # Recursive case: idagdag ang n sa resulta ng add_numbers(n-1)
+        return n + add_numbers(n - 1)
+
+# Halimbawa ng paggamit
+print(add_numbers(5))  # Output: 15 (1+2+3+4+5)
+</textarea>
+<button onclick="runPython(this)">Run</button>
+<pre class="output"></pre>
 </div>
 
+<!-- end of scroll body -->
+</div>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+<script>
+let pyodideReady = loadPyodide();
+let consoleHistory = JSON.parse(localStorage.getItem("consoleHistory")) || [];
+
+async function runPython(button) {
+    const consoleBox = button.closest(".Console_Box");
+    const code = consoleBox.querySelector(".python-input").value;
+    const outputel = consoleBox.querySelector(".output");
+    const pyodide = await pyodideReady;
+
+    let output = "";
+    const oldPrint = pyodide.globals.get("print");
+    pyodide.globals.set("print", (...args) => {
+      output += args.join(" ") + "\n";
+    });
+
+    try {
+      await pyodide.runPythonAsync(code);
+    } catch (err) {
+      output += err + "\n";
+    }
+
+    pyodide.globals.set("print", oldPrint);
+    outputel.innerText = output;
+
+    let saved = JSON.parse(localStorage.getItem("consoleHistory")) || [];
+    console.log(saved);
+
+}
+</script>
 <script>
 function toggleMenu(){
     const menu = document.getElementById("Menu");
@@ -169,27 +237,27 @@ document.addEventListener("click", function(event) {
 });
 </script>
 <script>
-document.getElementById("python-input").addEventListener("keydown", function(event) {
+document.querySelectorAll(".python-input").forEach(textarea => {
+  textarea.addEventListener("keydown", function(event) {
     if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
-        event.preventDefault(); 
-        runPython();
+      event.preventDefault();
+      const button = this.closest(".Console_Box").querySelector("button");
+      runPython(button);
     }
-});
-document.addEventListener("keydown", function(event) {
     if (event.key === "Escape") {
-        document.getElementById("output").innerText = "";
+      this.closest(".Console_Box").querySelector(".output").innerText = "";
     }
-});
-document.getElementById("python-input").addEventListener("keydown", function(event) {
     if (event.key === "Tab") {
-        event.preventDefault();
-        const start = this.selectionStart;
-        const end = this.selectionEnd;
-        const spaces = "    ";
-        this.value = this.value.substring(0, start) + spaces + this.value.substring(end);
-        this.selectionStart = this.selectionEnd = start + spaces.length;
+      event.preventDefault();
+      const start = this.selectionStart;
+      const end = this.selectionEnd;
+      const spaces = "    ";
+      this.value = this.value.substring(0, start) + spaces + this.value.substring(end);
+      this.selectionStart = this.selectionEnd = start + spaces.length;
     }
+  });
 });
+
 </script>
 </body>
 </html>

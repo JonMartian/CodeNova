@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href="CodeNova.css">
-    <title>CodeNova | HomePage</title>
+    <title>CodeNova | Arrays & 2d Arrays</title>
 </head>
 <body>
 <div class="Const_Header">
@@ -20,6 +20,7 @@
   <div class="Logo">
     <img src="CodeNova.png" alt="Logo">
   </div>
+
   <div class="header_link">
     <a href="CodeNova_About_Us.html">Tungkol(About)</a>
   </div>
@@ -29,17 +30,17 @@
 <!-- Move Menu OUTSIDE the header -->
 <nav class="Menu" id="Menu">
   <a href="index.html">Home</a>
-  <a onclick="stageMenu_unit1()">Unit 1: Inputs, outputs and variables</a>
+  <a onclick="stageMenu_unit1()">Unit 1: Inputs, outputs & variables</a>
   <a onclick="stageMenu_unit2()">Unit 2: If conditions, for loops, while loops</a>
-  <a onclick="stageMenu_unit3()">Unit 3: Strings, 1d arrays</a>
-  <a onclick="stageMenu_unit4()">Unit 4: Functions and recursion</a>
-  <a onclick="stageMenu_unit5()">Unit 5: 2d arrays, Sets, Hashmaps</a>
-  <a onclick="stageMenu_unit6()">Unit 6: Linked list, stacks, queues and deques</a>
+  <a onclick="stageMenu_unit3()">Unit 3: Strings</a>
+  <a onclick="stageMenu_unit4()">Unit 4: Functions & recursion</a>
+  <a onclick="stageMenu_unit5()">Unit 5: 1d & 2d arrays, Sets, Hashmaps</a>
+  <a onclick="stageMenu_unit6()">Unit 6: Linked list, stacks, queues & deques</a>
 </nav>
 
 <nav class = "Stage_Menu_Unit_1" id="Stage_Menu_Unit_1">
-    <a href="CodeNova_Unit1_L1.html">Introduction to Inputs</a>
-    <a href="CodeNova_Unit1_L2.html">Introduction to Outputs</a>
+    <a href="CodeNova_Unit1_L1.html">Inputs</a>
+    <a href="CodeNova_Unit1_L2.html">Outputs</a>
     <a href="CodeNova_Unit1_L3.html">Math Operators</a>
     <a href="CodeNova_Unit1_L4.html">Data Types</a>
 </nav>
@@ -73,17 +74,153 @@
 <div class = "Scroll_Body">
     <div class = "Quote">
         <h1 class="Homepage_message">
-            Teaching Python for beginners
+            Arrays & 2d Arrays (Strings sa Python)
         </h1>
     </div>
-    <div class = "Start Video">
-        
+    <div class = "mini_practice">
+        <h1 class="content_header">Maliit na Pagsasanay</h1>
+        <div class="mini_practice_box">
+            <a href="CodeNova_Unit5_L1_Mini_Practice_1.html">1.Mga pares na numero</a>
+        </div>
+        <div class="mini_practice_box">
+            <a href="CodeNova_Unit5_L1_Mini_Practice_2.html">2.Average na iskor</a>
+        </div>
+        <div class="mini_practice_box">
+            <a href="CodeNova_Unit5_L1_Mini_Practice_3.html">3.Pinakamataas na iskor</a>
+        </div>
     </div>
-    
+        <h1 class = "content_header">Ano ang <span class="green_text">Array (list sa Python)</span>?</h1>
+        <p class="content_text"> 
+        Sa Python, ang <span class="green_text">list</span> ay parang lalagyan na pwedeng maglaman ng maraming bagay, tulad ng mga numero o salita, sa iisang lugar. 
+        Madali kang makakapagdagdag, makakapagbago, o makakaalis ng items dito.
+        <br>
+        Ang <span class="green_text">2D array</span>  o  <span class="green_text">list</span> ay list na may laman pang ibang lists — parang talaan (table) na may rows at columns para mas maayos at madaling ma-access ang data.
+        </p>
+        <h1 class = "content_header">Gamit <span class="green_text">Arrays at 2D Arrayse</span></h1>
+        <div class = "stack_images">
+            <img src="1d_array.png" alt="1d array">
+            <img src="2d_array.png" alt="2d array">
+        </div>
 
+<div class="Console_Box">
+<h2>Console</h2>
+<textarea class="python-input" id="cb1">
+myFavoriteNumbers = [63,64,65,66,68]
+StudentGrades = [
+[“John”,”A”],
+[“Shaun”,”B”],
+[“Jacob”,”D”],
+[“Andres”,”F”],
+[“Gideon”,”A+”],
+]
+# These are examples of Arrays and 2D Arrays. 
+# Notice how the 2D Array “StudentGrades” is like a table because you can use it like a table in python (and coding in general).
 
+# If I want to add a new number to the end of the list: For example, if i want to add my 6th favorite number: 70, I would do this:
+myFavoriteNumbers.append(70)
+print(myFavoriteNumbers) # this would output: [63,64,65,66,68,70]
+print(myFavoriteNumbers[-1]) # this would output: 70
+print(myFavoriteNumbers[0:2]) # this would output my top 3 numbers: [63, 64, 65]
+print(len(myFavoriteNumbers)) # this would output: 6
+#Finally, to sort an array you can do this function:
+RandomNumbers=[1,99,86,42,41]
+RandomWords=[‘I’,’Love’,’Code’,’Nova’]
+print(sort(RandomNumbers)) # Outputs: [1,41,42,86,99]
+print(sort(RandomWords)) # Outputs: [‘Code’,’I’,’Love’,’Nova’]
+</textarea>
+<button onclick="runPython(this)">Run</button>
+<pre class="output"></pre>
 </div>
 
+<h1 class="content_header">Accessing <span class="green_text">arrays</span> with <span class="green_text">indexes</span></h1>
+<div class="Console_Box">
+<h2>Console</h2>
+<textarea class="python-input">
+StudentGrades = [
+    ["John","A"],
+    ["Shaun","B"],
+    ["Jacob","D"],
+    ["Andres","F"],
+    ["Gideon","A+"],
+]
+
+# Pwede na nating balikan ang list na ito.
+# Ang pag-access ng elements sa 2D array ay katulad lang ng sa 1D array.
+# Kung gusto ko makuha ang grado ni Andres gagawin ko ito:
+print(StudentGrades[3][1])  # Ito ay maglalabas ng "F", ang grado ni Andres
+
+# Una ang rows bago ang columns: Si "Andres" ay ika-4 na estudyante kaya ang index niya ay 3
+# Ang mga grado ay nasa ika-2 column kaya ang index ay 1
+# Kaya, gagamitin ko ang StudentGrades[3][1] para makuha ang grado ni Andres
+</textarea>
+<button onclick="runPython(this)">Run</button>
+<pre class="output"></pre>
+</div>
+
+
+<h1 class="content_header">Inputting <span class="green_text">arrays and 2d arrays</span></h1>
+<div class="Console_Box">
+<h2>Console</h2>
+<textarea class="python-input" id="cb2">
+myArray = input().split()  # input: 1 2 3 4 5
+print(myArray)  # Output: ['1','2','3','4','5']
+# Mapapansin na lahat sila ay strings
+
+# Kung gusto mong gawing integers ang input sa array, pwede mong gawin ito:
+myArray = list(map(int, input().split()))  # input: 1 2 3 4 5
+print(myArray)  # Output: [1,2,3,4,5]
+# Integers na silang lahat!
+
+# Ngayon na tapos na tayo sa 1D arrays, ganito naman mag-input ng 2D arrays:
+myArray = []
+for i in range(3):  # 3 ang bilang ng rows
+    row = input().split()  # input: a b c d e
+    myArray.append(row)
+
+print(myArray)  # Output:
+# [
+#   ["a","b","c","d","e"],
+#   ["a","b","c","d","e"],
+#   ["a","b","c","d","e"]
+# ]
+</textarea>
+<button onclick="runPython(this)">Run</button>
+<pre class="output"></pre>
+</div>
+<!-- end of scroll body -->
+</div>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+<script>
+let pyodideReady = loadPyodide();
+let consoleHistory = JSON.parse(localStorage.getItem("consoleHistory")) || [];
+
+async function runPython(button) {
+    const consoleBox = button.closest(".Console_Box");
+    const code = consoleBox.querySelector(".python-input").value;
+    const outputel = consoleBox.querySelector(".output");
+    const pyodide = await pyodideReady;
+
+    let output = "";
+    const oldPrint = pyodide.globals.get("print");
+    pyodide.globals.set("print", (...args) => {
+      output += args.join(" ") + "\n";
+    });
+
+    try {
+      await pyodide.runPythonAsync(code);
+    } catch (err) {
+      output += err + "\n";
+    }
+
+    pyodide.globals.set("print", oldPrint);
+    outputel.innerText = output;
+
+    let saved = JSON.parse(localStorage.getItem("consoleHistory")) || [];
+    console.log(saved);
+
+}
+</script>
 <script>
 function toggleMenu(){
     const menu = document.getElementById("Menu");
@@ -169,27 +306,27 @@ document.addEventListener("click", function(event) {
 });
 </script>
 <script>
-document.getElementById("python-input").addEventListener("keydown", function(event) {
+document.querySelectorAll(".python-input").forEach(textarea => {
+  textarea.addEventListener("keydown", function(event) {
     if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
-        event.preventDefault(); 
-        runPython();
+      event.preventDefault();
+      const button = this.closest(".Console_Box").querySelector("button");
+      runPython(button);
     }
-});
-document.addEventListener("keydown", function(event) {
     if (event.key === "Escape") {
-        document.getElementById("output").innerText = "";
+      this.closest(".Console_Box").querySelector(".output").innerText = "";
     }
-});
-document.getElementById("python-input").addEventListener("keydown", function(event) {
     if (event.key === "Tab") {
-        event.preventDefault();
-        const start = this.selectionStart;
-        const end = this.selectionEnd;
-        const spaces = "    ";
-        this.value = this.value.substring(0, start) + spaces + this.value.substring(end);
-        this.selectionStart = this.selectionEnd = start + spaces.length;
+      event.preventDefault();
+      const start = this.selectionStart;
+      const end = this.selectionEnd;
+      const spaces = "    ";
+      this.value = this.value.substring(0, start) + spaces + this.value.substring(end);
+      this.selectionStart = this.selectionEnd = start + spaces.length;
     }
+  });
 });
+
 </script>
 </body>
 </html>

@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href="CodeNova.css">
-    <title>CodeNova | HomePage</title>
+    <title>CodeNova | Function</title>
 </head>
 <body>
 <div class="Const_Header">
@@ -20,6 +20,7 @@
   <div class="Logo">
     <img src="CodeNova.png" alt="Logo">
   </div>
+
   <div class="header_link">
     <a href="CodeNova_About_Us.html">Tungkol(About)</a>
   </div>
@@ -29,17 +30,17 @@
 <!-- Move Menu OUTSIDE the header -->
 <nav class="Menu" id="Menu">
   <a href="index.html">Home</a>
-  <a onclick="stageMenu_unit1()">Unit 1: Inputs, outputs and variables</a>
+  <a onclick="stageMenu_unit1()">Unit 1: Inputs, outputs & variables</a>
   <a onclick="stageMenu_unit2()">Unit 2: If conditions, for loops, while loops</a>
-  <a onclick="stageMenu_unit3()">Unit 3: Strings, 1d arrays</a>
-  <a onclick="stageMenu_unit4()">Unit 4: Functions and recursion</a>
-  <a onclick="stageMenu_unit5()">Unit 5: 2d arrays, Sets, Hashmaps</a>
-  <a onclick="stageMenu_unit6()">Unit 6: Linked list, stacks, queues and deques</a>
+  <a onclick="stageMenu_unit3()">Unit 3: Strings</a>
+  <a onclick="stageMenu_unit4()">Unit 4: Functions & recursion</a>
+  <a onclick="stageMenu_unit5()">Unit 5: 1d & 2d arrays, Sets, Hashmaps</a>
+  <a onclick="stageMenu_unit6()">Unit 6: Linked list, stacks, queues & deques</a>
 </nav>
 
 <nav class = "Stage_Menu_Unit_1" id="Stage_Menu_Unit_1">
-    <a href="CodeNova_Unit1_L1.html">Introduction to Inputs</a>
-    <a href="CodeNova_Unit1_L2.html">Introduction to Outputs</a>
+    <a href="CodeNova_Unit1_L1.html">Inputs</a>
+    <a href="CodeNova_Unit1_L2.html">Outputs</a>
     <a href="CodeNova_Unit1_L3.html">Math Operators</a>
     <a href="CodeNova_Unit1_L4.html">Data Types</a>
 </nav>
@@ -73,17 +74,79 @@
 <div class = "Scroll_Body">
     <div class = "Quote">
         <h1 class="Homepage_message">
-            Teaching Python for beginners
+        Functions
         </h1>
     </div>
-    <div class = "Start Video">
-        
-    </div>
-    
 
+<h1 class = "content_header">Ano ang isang <span class="green_text">function</span>?</h1>
+<p class="content_text"> 
+Sa Python, ang function ay isang pinangalanang bloke ng maaaring muling gamitin na code na nagsasagawa ng 
+isang partikular na gawain. Sa halip na paulit-ulit na isulat ang parehong mga instruksyon sa iyong programa, 
+magdedefine ka ng isang function nang isang beses at saka ito tatawagin tuwing nais mong gawin ang gawaing iyon. 
+Maaaring tumanggap ng mga input ang mga function, na tinatawag na parameters o arguments, na nagpapahintulot sa kanila 
+na mag-operate sa iba't ibang data sa bawat paggamit. Pagkatapos iproseso, maaaring magbalik ng resulta ang isang function 
+pabalik sa bahagi ng programang tumawag dito. Nakatutulong ito upang manatiling maayos at malinis ang iyong code dahil hinahati 
+nito ang mga kumplikadong problema sa mas maliliit at madaling pamahalaang piraso. Ginagawa rin ng mga function na mas madaling 
+basahin, i-test, at i-debug ang code dahil maaari mong ihiwalay ang bawat gawain. Bukod dito, sa pamamagitan ng paggamit ng mga 
+function, maiiwasan ang pagdodoble ng code, na siyang nagbabawas sa tsansa ng mga error at nagpapadali sa pagmementina ng programa. 
+Sa kabuuan, ang mga function ay isang pangunahing konsepto sa Python na nagbibigay-daan sa iyong sumulat ng modular, maaaring 
+muling gamitin, at scalable na code.
+</p>
 
+<h1 class = "content_header">Gamit <span class="green_text">functions</span></h1>
+<div class="Console_Box">
+<h2>Console</h2>
+<textarea class="python-input" id="cb1">
+def PangalanNgFunction(parameter_1, parameter_2):
+	# Magdagdag ng code dito
+	return parameter_1, parameter_2
+
+def Multiply(a,b): # Ginagamit ang keyword na “def” para magdeklara ng mga function
+# Maaari mong palitan ang pangalan ng function: subukan mong baguhin ang “FunctionName”
+	return a*b
+
+# Maaari mong gamitin ang mga function bilang mga variable gaya ng ipinapakita dito:
+print(Multiply(5,6)+Multiply(7,8)) # Output: 86
+
+</textarea>
+<button onclick="runPython(this)">Run</button>
+<pre class="output"></pre>
 </div>
 
+<!-- end of scroll body -->
+</div>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+<script>
+let pyodideReady = loadPyodide();
+let consoleHistory = JSON.parse(localStorage.getItem("consoleHistory")) || [];
+
+async function runPython(button) {
+    const consoleBox = button.closest(".Console_Box");
+    const code = consoleBox.querySelector(".python-input").value;
+    const outputel = consoleBox.querySelector(".output");
+    const pyodide = await pyodideReady;
+
+    let output = "";
+    const oldPrint = pyodide.globals.get("print");
+    pyodide.globals.set("print", (...args) => {
+      output += args.join(" ") + "\n";
+    });
+
+    try {
+      await pyodide.runPythonAsync(code);
+    } catch (err) {
+      output += err + "\n";
+    }
+
+    pyodide.globals.set("print", oldPrint);
+    outputel.innerText = output;
+
+    let saved = JSON.parse(localStorage.getItem("consoleHistory")) || [];
+    console.log(saved);
+
+}
+</script>
 <script>
 function toggleMenu(){
     const menu = document.getElementById("Menu");
@@ -169,27 +232,27 @@ document.addEventListener("click", function(event) {
 });
 </script>
 <script>
-document.getElementById("python-input").addEventListener("keydown", function(event) {
+document.querySelectorAll(".python-input").forEach(textarea => {
+  textarea.addEventListener("keydown", function(event) {
     if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
-        event.preventDefault(); 
-        runPython();
+      event.preventDefault();
+      const button = this.closest(".Console_Box").querySelector("button");
+      runPython(button);
     }
-});
-document.addEventListener("keydown", function(event) {
     if (event.key === "Escape") {
-        document.getElementById("output").innerText = "";
+      this.closest(".Console_Box").querySelector(".output").innerText = "";
     }
-});
-document.getElementById("python-input").addEventListener("keydown", function(event) {
     if (event.key === "Tab") {
-        event.preventDefault();
-        const start = this.selectionStart;
-        const end = this.selectionEnd;
-        const spaces = "    ";
-        this.value = this.value.substring(0, start) + spaces + this.value.substring(end);
-        this.selectionStart = this.selectionEnd = start + spaces.length;
+      event.preventDefault();
+      const start = this.selectionStart;
+      const end = this.selectionEnd;
+      const spaces = "    ";
+      this.value = this.value.substring(0, start) + spaces + this.value.substring(end);
+      this.selectionStart = this.selectionEnd = start + spaces.length;
     }
+  });
 });
+
 </script>
 </body>
 </html>
